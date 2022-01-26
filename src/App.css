@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+/* roots */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
+}
+
+/* app */
+.App {
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-content {
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: lightgray;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: black;
 }
 
-.App-link {
-  color: #61dafb;
+.header-logo {
+  font-weight: bold;
+  display: flex;
+  gap: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-logo>button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header-navbar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header-navbar a {
+  color: black;
+}
+
+/* about-page */
+.about-page {
+  display: grid;
+  grid-template-areas: "avatar info" "exp exp";
+  grid-template-columns: 1fr 2fr;
+}
+
+.about-page-avatar {
+  grid-area: avatar;
+}
+
+.about-page-avatar img {
+  width: 30vw;
+  border-radius: 50%;
+}
+
+.about-page-info {
+  grid-area: info;
+  margin-left: 1rem;
+}
+
+.about-page-info>div {
+  margin-top: 0.5rem;
+}
+
+.about-page-exp {
+  grid-area: exp;
+}
+
+.about-page-exp>h3 {
+  margin-top: 2rem;
+}
+
+.about-page-exp>div {
+  margin-top: 1rem;
 }

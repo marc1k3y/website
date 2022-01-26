@@ -1,0 +1,32 @@
+import React, { useState } from "react"
+import { useSelector } from "react-redux"
+import avatar from "../assets/avatar.png"
+import coder from "../assets/coder.png"
+import TimeCounter from "../components/TimeCounter"
+
+export default function About() {
+  const { currentTheme } = useSelector(state => state.theme)
+  const [expTime, setExpTime] = useState()
+
+  setTimeout(() => {
+    setExpTime(TimeCounter())
+  }, 1000)
+  return (
+    <div className="about-page">
+      <div className="about-page-avatar">
+        <img src={"app" in currentTheme ? coder : avatar} alt="avatar" />
+      </div>
+      <div className="about-page-info">
+        <h3>Marck Naberezhnykh</h3>
+        <p>marc1k3y</p>
+        <div><b>profession:</b> coder</div>
+        <div><b>hobby:</b> code, travel, photo, blog</div>
+      </div>
+      <div className="about-page-exp">
+        <h3>my code experience:</h3>
+        <div><b>by time:</b> {expTime} </div>
+        <div><b>by skills:</b></div>
+      </div>
+    </div>
+  )
+}
