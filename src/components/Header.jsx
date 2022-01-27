@@ -27,9 +27,9 @@ export default function Header() {
       </div>
       <div className="header-navbar">
         <NavLink
-          to={location.pathname === "/" ? "/about" : "/"}
+          to={location.pathname === "/website/" ? "/website/about" : "/website/"}
           style={currentTheme?.header?.links}>
-          {location.pathname === "/" ? "About" : "Main"}
+          {location.pathname === "/website/" ? "About" : "Main"}
         </NavLink>
       </div>
     </div>

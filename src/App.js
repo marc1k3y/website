@@ -15,7 +15,7 @@ export default function App() {
       <div className="app-content">
         <Routes>
           <Route path="*" element={<Main />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/website/about" element={<About />} />
         </Routes>
       </div>
     </div>
