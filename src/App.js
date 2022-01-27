@@ -8,7 +8,6 @@ import Main from "./pages/Main"
 
 export default function App() {
   const { currentTheme } = useSelector(state => state.theme)
-  console.log(currentTheme)
   return (
     <div className="App" style={currentTheme?.app?.wrapper}>
       <Header />

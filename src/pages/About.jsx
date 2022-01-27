@@ -8,9 +8,9 @@ export default function About() {
   const { currentTheme } = useSelector(state => state.theme)
   const [expTime, setExpTime] = useState()
 
-  setTimeout(() => {
+  setInterval(() => {
     setExpTime(TimeCounter())
-  }, 1000)
+  })
   return (
     <div className="about-page">
       <div className="about-page-avatar">
@@ -21,11 +21,12 @@ export default function About() {
         <p>marc1k3y</p>
         <div><b>profession:</b> coder</div>
         <div><b>hobby:</b> code, travel, photo, blog</div>
+        <div><b>languages:</b> JavaScript, humans, python, java, c++, go</div>
       </div>
       <div className="about-page-exp">
         <h3>my code experience:</h3>
         <div><b>by time:</b> {expTime} </div>
-        <div><b>by skills:</b></div>
+        <div><b>by skills:</b> web application develop, server develop, sys administrate</div>
       </div>
     </div>
   )

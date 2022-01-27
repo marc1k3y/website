@@ -17,8 +17,14 @@ const themes = {
       links: {
         "color": "rgb(0, 255, 0)"
       }
+    },
+    main: {
+      content: {
+        "backgroundColor": "rgb(0, 60, 0)",
+        "padding": "1rem"
+      }
     }
-  }
+}
 }
 
 export default function ThemeReducer(state = themes, action) {

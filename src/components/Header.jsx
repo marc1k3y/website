@@ -6,7 +6,7 @@ import { setDefaultThemeAction, setCoderThemeAction } from "../store/actions/the
 
 export default function Header() {
   const dispatch = useDispatch()
-  const location = useLocation()
+  const { pathname } = useLocation()
   const { currentTheme } = useSelector(state => state.theme)
 
   function changeTheme() {
@@ -27,9 +27,9 @@ export default function Header() {
       </div>
       <div className="header-navbar">
         <NavLink
-          to={location.pathname === "/" ? "/about" : "/"}
+          to={pathname === "/" ? "/about" : "/"}
           style={currentTheme?.header?.links}>
-          {location.pathname === "/" ? "About" : "Main"}
+          {pathname === "/" ? "About" : "Main"}
         </NavLink>
       </div>
     </div>
