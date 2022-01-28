@@ -1,4 +1,5 @@
 export default function TimeCounter() {
+  
   const prevTime = 1609459200000
   const currentTime = Date.now()
 

@@ -1,10 +1,15 @@
 import React from "react"
+import { useSelector } from "react-redux"
 
-const Modal = ({visible, children}) => {
+const Modal = ({ visible, children }) => {
+  const { currentTheme } = useSelector(state => state?.theme)
   return (
-      <div style={{display: visible ? "flex" : "none"}} className="modal">
-        {children}
-      </div>
+    <div className="modal"
+      style={{ display: visible ? "flex" : "none", 
+      backgroundColor: currentTheme?.modal?.backgroundColor || "lightgray",
+      border: currentTheme?.modal?.border || "2px solid black"}} >
+      {children}
+    </div>
   )
 }
 

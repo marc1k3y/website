@@ -36,6 +36,10 @@ const themes = {
         "color": "rgb(0, 255, 0)",
         "border": "2px solid rgb(0, 255, 0)"
       }
+    },
+    modal: {
+      "backgroundColor": "black",
+      "border": "2px solid rgb(0,255,0)"
     }
 }
 }
