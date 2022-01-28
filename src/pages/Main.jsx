@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import EmailForm from "../components/EmailForm";
 
 export default function Main() {
-  const { currentTheme } = useSelector(state => state.theme)
+  const { currentTheme } = useSelector(state => state?.theme)
   const [text1, setText1] = useState("")
   const [text2, setText2] = useState("")
 
@@ -22,6 +23,7 @@ export default function Main() {
         <p>{text1}</p>
         <p>{text2}</p>
       </div>
+      <EmailForm />
     </div>
   )
 }

@@ -23,6 +23,18 @@ const themes = {
         "backgroundColor": "rgb(0, 60, 0)",
         "padding": "1rem"
       }
+    },
+    emailForm: {
+      textFields: {
+        "backgroundColor": "rgb(0, 100, 0)",
+        "color": "rgb(0, 255, 0)",
+        "border": "1px solid rgb(0, 255, 0)"
+      },
+      button: {
+        "backgroundColor": "rgb(0, 100, 0)",
+        "color": "rgb(0, 255, 0)",
+        "border": "2px solid rgb(0, 255, 0)"
+      }
     }
 }
 }

@@ -1,13 +1,13 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { Route, Routes } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import "./App.css"
 import Header from "./components/Header"
 import About from "./pages/About"
 import Main from "./pages/Main"
 
 export default function App() {
-  const { currentTheme } = useSelector(state => state.theme)
+  const { currentTheme } = useSelector(state => state?.theme)
   return (
     <div className="App" style={currentTheme?.app?.wrapper}>
       <Header />

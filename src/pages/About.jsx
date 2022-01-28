@@ -5,7 +5,7 @@ import coder from "../assets/coder.png"
 import TimeCounter from "../components/TimeCounter"
 
 export default function About() {
-  const { currentTheme } = useSelector(state => state.theme)
+  const { currentTheme } = useSelector(state => state?.theme)
   const [expTime, setExpTime] = useState()
 
   setInterval(() => {

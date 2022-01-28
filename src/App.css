@@ -95,3 +95,24 @@
 .main-page-content {
   margin-top: 1rem;
 }
+
+/*email-from*/
+.email-form>form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 60%;
+}
+
+.email-form>form>input {
+  height: 2rem;
+  padding: 0.5rem;
+}
+
+.email-form>form>textarea {
+  padding: 0.5rem;
+}
+
+.email-form>form>button {
+  width: 20%;
+}
