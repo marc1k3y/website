@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import avatar from "../assets/avatar.png"
 import coder from "../assets/coder.png"
@@ -8,9 +8,10 @@ export default function About() {
   const { currentTheme } = useSelector(state => state?.theme)
   const [expTime, setExpTime] = useState()
 
-  setInterval(() => {
-    setExpTime(TimeCounter())
-  })
+  const interval = setInterval(() => setExpTime(TimeCounter), 1000)
+
+  useEffect(() => () => clearInterval(interval), [interval])
+
   return (
     <div className="about-page">
       <div className="about-page-avatar">
@@ -25,7 +26,7 @@ export default function About() {
       </div>
       <div className="about-page-exp">
         <h3>my code experience:</h3>
-        <div><b>by time:</b> {expTime} </div>
+        <div><b>by time:</b> {expTime || "loading.."} </div>
         <div><b>by skills:</b> web application develop, server develop, sys administrate</div>
       </div>
     </div>

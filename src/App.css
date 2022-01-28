@@ -70,6 +70,12 @@
   border-radius: 50%;
 }
 
+@media only screen and (min-width: 700px) {
+  .about-page-avatar img {
+    width: 25vw;
+  }
+}
+
 .about-page-info {
   grid-area: info;
   margin-left: 1rem;
@@ -125,18 +131,18 @@
 /*modal*/
 .modal {
   position: fixed;
-  top: 40%;
-  left: 40%;
-  min-height: 10vh;
-  min-width: 30vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  font-size: 3rem;
 }
 
 @media only screen and (max-width: 500px) {
   .modal {
-    top: 25%;
-    left: 15%;
+    font-size: 1.5rem;
   }
 }

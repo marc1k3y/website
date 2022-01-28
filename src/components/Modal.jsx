@@ -6,8 +6,7 @@ const Modal = ({ visible, children }) => {
   return (
     <div className="modal"
       style={{ display: visible ? "flex" : "none", 
-      backgroundColor: currentTheme?.modal?.backgroundColor || "lightgray",
-      border: currentTheme?.modal?.border || "2px solid black"}} >
+      backgroundColor: currentTheme?.modal?.backgroundColor || "lightgray"}}>
       {children}
     </div>
   )

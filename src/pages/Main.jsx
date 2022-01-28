@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import EmailForm from "../components/EmailForm";
+import EmailForm from "../components/EmailForm"
 
 export default function Main() {
   const { currentTheme } = useSelector(state => state?.theme)

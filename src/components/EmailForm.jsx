@@ -1,11 +1,12 @@
 import React, { useState } from "react"
-import { send } from "emailjs-com"
 import { useSelector } from "react-redux"
+import { send } from "emailjs-com"
 import Modal from "./Modal"
 
 export default function EmailForm() {
   const { currentTheme } = useSelector(state => state?.theme)
   const [modal, setModal] = useState(false)
+  
   const [toSend, setToSend] = useState({
     from_name: "",
     message: "",
