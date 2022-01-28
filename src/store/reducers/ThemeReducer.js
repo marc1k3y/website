@@ -28,7 +28,8 @@ const themes = {
       textFields: {
         "backgroundColor": "rgb(0, 100, 0)",
         "color": "rgb(0, 255, 0)",
-        "border": "1px solid rgb(0, 255, 0)"
+        "border": "1px solid rgb(0, 255, 0)",
+        "fontWeight": "bold"
       },
       button: {
         "backgroundColor": "rgb(0, 100, 0)",

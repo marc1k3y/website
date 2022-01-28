@@ -39,33 +39,32 @@ export default function EmailForm() {
       <div className="email-form">
         <form onSubmit={onSubmit}>
           <h3 style={{marginTop: "1rem"}}>Contact with me</h3>
+          <label htmlFor="reply_to">Your email</label>
           <input
               style={currentTheme?.emailForm?.textFields}
               type="email"
               name="reply_to"
-              placeholder="Your email"
               value={toSend.reply_to}
               onChange={handleChange}
               required
           />
+          <label htmlFor="from_name">Your name</label>
           <input
               style={currentTheme?.emailForm?.textFields}
               type="text"
               name="from_name"
-              placeholder="Your name"
-              value={toSend.from_name}
+              value={toSend.from_name.charAt(0).toUpperCase() + toSend.from_name.slice(1)} // capitalize name
               onChange={handleChange}
               required
           />
+          <label htmlFor="message">Your message</label>
           <textarea
               style={currentTheme?.emailForm?.textFields}
               name="message"
               cols="30"
               rows="3"
-              placeholder="Your message"
               value={toSend.message}
               onChange={handleChange}
-              minLength="5"
               required/>
           <button
               style={currentTheme?.emailForm?.button}
