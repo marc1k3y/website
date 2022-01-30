@@ -5,15 +5,12 @@ import EmailForm from "../components/EmailForm"
 export default function Main() {
   const { currentTheme } = useSelector(state => state?.theme)
   const [text1, setText1] = useState("")
-  const [text2, setText2] = useState("")
 
   useEffect(() => {
     if ("app" in currentTheme) {
       setText1(">> this main page site")
-      setText2(">> all content this site sorted by priority")
     } else {
       setText1("this main page site")
-      setText2("all content this site sorted by priority")
     }
   }, [currentTheme])
   return (
@@ -21,9 +18,8 @@ export default function Main() {
       <h1>Hello world!</h1>
       <div className="main-page-content" style={currentTheme?.main?.content}>
         <p>{text1}</p>
-        <p>{text2}</p>
+        <EmailForm />
       </div>
-      <EmailForm />
     </div>
   )
 }
