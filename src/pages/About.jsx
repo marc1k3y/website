@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import avatar from "../assets/avatar.png"
-import coder from "../assets/coder.svg"
+// import coder from "../assets/coder.svg"
+import coder from "../assets/coder.png"
 import csmnt from "../assets/cosmonaut.svg"
 import TimeCounter from "../components/TimeCounter"
 
@@ -11,12 +12,25 @@ export default function About() {
 
   const interval = setInterval(() => setExpTime(TimeCounter), 1000)
 
+  let currentImg
+  switch (currentTheme?.title) {
+    case "coder":
+      currentImg = coder
+      break
+    case "dark-blue":
+      currentImg = csmnt
+      break
+    default:
+      currentImg = avatar
+      break
+  }
+
   useEffect(() => () => clearInterval(interval), [interval])
 
   return (
     <div className="about-page">
       <div className="about-page-avatar">
-        <img src={"darkApp" in currentTheme && csmnt || "coderApp" in currentTheme && coder || avatar} alt="avatar" />
+        <img src={currentImg} alt="avatar" />
       </div>
       <div className="about-page-info">
         <h3>Marck Naberezhnykh</h3>

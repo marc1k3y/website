@@ -4,7 +4,8 @@ const initState = {
   currentTheme: {},
   themes: {
     coderTheme: {
-      coderApp: {
+      title: "coder",
+      app: {
         wrapper: {
           "backgroundColor": "black",
           "color": "rgb(0, 255, 0)"
@@ -43,7 +44,8 @@ const initState = {
       }
     },
     darkBlueTheme: {
-      darkApp: {
+      title: "dark-blue",
+      app: {
         wrapper: {
           "backgroundColor": "rgb(28, 33, 46)",
           "color": "goldenrod"

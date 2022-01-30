@@ -7,10 +7,16 @@ export default function Main() {
   const [text1, setText1] = useState("")
 
   useEffect(() => {
-    if ("coderApp" || "darkApp" in currentTheme) {
-      setText1(">> this main page site")
-    } else {
-      setText1("this main page site")
+    switch (currentTheme?.title) {
+      case "coder":
+        setText1(">> this main page site")
+        break
+      // need any
+      case "dark-blue":
+        setText1(">> this main page site")
+        break
+      default:
+        setText1("this main page site")
     }
   }, [currentTheme])
   return (

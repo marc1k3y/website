@@ -8,7 +8,7 @@ import { routes } from "./router"
 export default function App() {
   const { currentTheme } = useSelector(state => state?.theme)
   return (
-    <div className="App" style={currentTheme?.darkApp?.wrapper || currentTheme?.coderApp?.wrapper}>
+    <div className="App" style={currentTheme?.app?.wrapper}>
       <Header />
       <div className="app-content">
         <Routes>

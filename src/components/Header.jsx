@@ -13,7 +13,7 @@ export default function Header() {
   const [darkThemeBtn, setDarkThemeBtn] = useState(dark)
 
   function coderThemeHandler() {
-    if ("coderApp" in currentTheme) {
+    if (currentTheme?.title === "coder") {
       setDarkThemeBtn(dark)
       dispatch(setDefaultThemeAction())
     } else {
@@ -34,7 +34,7 @@ export default function Header() {
     <div className="header" style={currentTheme?.header?.wrapper}>
       <div className="header-logo">
         <div>c
-          <img src={darkThemeBtn} width="20" onClick={darkThemeHandler} />
+          <img src={darkThemeBtn} width="20" onClick={darkThemeHandler} alt="theme-changer" />
           der website</div>
         <button
           onClick={coderThemeHandler}
