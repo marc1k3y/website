@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import avatar from "../assets/avatar.png"
-import coder from "../assets/coder.png"
+import coder from "../assets/coder.svg"
+import csmnt from "../assets/cosmonaut.svg"
 import TimeCounter from "../components/TimeCounter"
 
 export default function About() {
@@ -15,7 +16,7 @@ export default function About() {
   return (
     <div className="about-page">
       <div className="about-page-avatar">
-        <img src={"app" in currentTheme ? coder : avatar} alt="avatar" />
+        <img src={"darkApp" in currentTheme && csmnt || "coderApp" in currentTheme && coder || avatar} alt="avatar" />
       </div>
       <div className="about-page-info">
         <h3>Marck Naberezhnykh</h3>

@@ -1,27 +1,45 @@
+import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { NavLink } from "react-router-dom"
-import { setDefaultThemeAction, setCoderThemeAction } from "../store/actions/themeAction"
+import { setDefaultThemeAction, setCoderThemeAction, setDarkBlueThemeAction } from "../store/actions/themeAction"
 import { links } from "../links"
-import { useState } from "react"
+import light from "../assets/moon-light.svg"
+import dark from "../assets/moon-blue.svg"
 
 export default function Header() {
   const dispatch = useDispatch()
   const { currentTheme } = useSelector(state => state?.theme)
   const [mobileNav, setMobileNav] = useState(false)
+  const [darkThemeBtn, setDarkThemeBtn] = useState(dark)
 
-  function changeTheme() {
-    "app" in currentTheme
-      ? dispatch(setDefaultThemeAction())
-      : dispatch(setCoderThemeAction())
+  function coderThemeHandler() {
+    if ("coderApp" in currentTheme) {
+      setDarkThemeBtn(dark)
+      dispatch(setDefaultThemeAction())
+    } else {
+      dispatch(setCoderThemeAction())
+    }
+  }
+
+  function darkThemeHandler() {
+    if (darkThemeBtn === dark) {
+      setDarkThemeBtn(light)
+      dispatch(setDarkBlueThemeAction())
+    } else {
+      setDarkThemeBtn(dark)
+      dispatch(setDefaultThemeAction())
+    }
   }
   return (
     <div className="header" style={currentTheme?.header?.wrapper}>
       <div className="header-logo">
-        <div>coder website</div>
+        <div>c
+          <img src={darkThemeBtn} width="20" onClick={darkThemeHandler} />
+          der website</div>
         <button
-          onClick={changeTheme}
+          onClick={coderThemeHandler}
           style={currentTheme?.header?.links}>
-          {"app" in currentTheme ? "cd.." : "</>"}
+          {"coderApp" in currentTheme ? "cd.." : "</>"}
         </button>
       </div>
       <div className="header-navbar">

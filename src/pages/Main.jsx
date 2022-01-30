@@ -7,7 +7,7 @@ export default function Main() {
   const [text1, setText1] = useState("")
 
   useEffect(() => {
-    if ("app" in currentTheme) {
+    if ("coderApp" || "darkApp" in currentTheme) {
       setText1(">> this main page site")
     } else {
       setText1("this main page site")
