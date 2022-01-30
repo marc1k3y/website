@@ -3,8 +3,6 @@ import "./App.css"
 import { useSelector } from "react-redux"
 import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
-import Main from "./pages/Main"
-import About from "./pages/About"
 import { routes } from "./router"
 
 export default function App() {
