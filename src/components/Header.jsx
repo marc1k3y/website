@@ -1,12 +1,10 @@
-import React from "react"
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
-import { NavLink, useLocation } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { NavLink } from "react-router-dom"
 import { setDefaultThemeAction, setCoderThemeAction } from "../store/actions/themeAction"
+import { links } from "../links"
 
 export default function Header() {
   const dispatch = useDispatch()
-  const { pathname } = useLocation()
   const { currentTheme } = useSelector(state => state.theme)
 
   function changeTheme() {
@@ -14,7 +12,6 @@ export default function Header() {
       ? dispatch(setDefaultThemeAction())
       : dispatch(setCoderThemeAction())
   }
-
   return (
     <div className="header" style={currentTheme?.header?.wrapper}>
       <div className="header-logo">
@@ -26,11 +23,12 @@ export default function Header() {
         </button>
       </div>
       <div className="header-navbar">
-        <NavLink
-          to={pathname === "/" ? "/about" : "/"}
-          style={currentTheme?.header?.links}>
-          {pathname === "/" ? "About" : "Main"}
-        </NavLink>
+        {links.map(link =>
+          <NavLink 
+          style={currentTheme?.header?.links}
+          key={link.title} 
+          to={link.to}>{link.title}</NavLink>
+        )}
       </div>
     </div>
   )

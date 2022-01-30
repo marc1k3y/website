@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import EmailForm from "../components/EmailForm"
 
@@ -10,10 +10,10 @@ export default function Main() {
   useEffect(() => {
     if ("app" in currentTheme) {
       setText1(">> this main page site")
-      setText2(">> all content this site sorted at priority")
+      setText2(">> all content this site sorted by priority")
     } else {
       setText1("this main page site")
-      setText2("all content this site sorted at priority")
+      setText2("all content this site sorted by priority")
     }
   }, [currentTheme])
   return (

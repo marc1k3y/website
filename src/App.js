@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Main from "./pages/Main"
 import About from "./pages/About"
+import { routes } from "./router"
 
 export default function App() {
   const { currentTheme } = useSelector(state => state?.theme)
@@ -13,8 +14,12 @@ export default function App() {
       <Header />
       <div className="app-content">
         <Routes>
-          <Route path="*" element={<Main />} />
-          <Route path="/about" element={<About />} />
+          {routes.map(route =>
+            <Route
+              key={route.path}
+              path={route.path}
+              element={route.element}
+              exact={route.exact} />)}
         </Routes>
       </div>
     </div>

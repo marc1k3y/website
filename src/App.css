@@ -146,3 +146,42 @@
     font-size: 1.5rem;
   }
 }
+
+/* shop */
+.shop {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+.shop-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: lightgray;
+  padding: 1rem;
+  border-radius: 10%;
+  min-width: 140px;
+  min-height: 180px;
+}
+
+.shop-card>h4 {
+  margin-bottom: 0.5rem;
+}
+
+.shop-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.shop-card-price {
+  margin-top: auto;
+  font-weight: bold;
+  color: green;
+  background-color: white;
+}
